@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #FAF5FF;
+  --foreground: #1A1A2E;
+  --primary: #BF5AF2;
+  --primary-light: #D99BF7;
+  --primary-muted: #A63ED9;
+  --primary-subtle: #F3E8FE;
+  --primary-faint: rgba(191,90,242,0.08);
+  --primary-disabled: #C9A8E0;
+  --primary-shadow: rgba(191,90,242,0.25);
+  --accent: #5856D6;
+  --card-bg: #FFFFFF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-muted: var(--primary-muted);
+  --color-primary-subtle: var(--primary-subtle);
+  --color-primary-faint: var(--primary-faint);
+  --color-primary-disabled: var(--primary-disabled);
+  --color-primary-shadow: var(--primary-shadow);
+  --color-accent: var(--accent);
+  --color-card: var(--card-bg);
+  --font-sans: 'DM Sans', sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'DM Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
