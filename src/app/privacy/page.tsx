@@ -10,7 +10,7 @@ export default function PrivacyPage() {
     <article className="max-w-3xl mx-auto px-6 py-16 md:py-24 prose-custom">
       <h1 className="text-3xl md:text-4xl font-bold mb-2">Privacy Policy</h1>
       <p className="text-foreground/50 mb-10">
-        Effective Date: March 2026 &middot; Last Updated: March 2026
+        Effective Date: March 2026 &middot; Last Updated: April 2026
       </p>
 
       <p>
@@ -26,16 +26,16 @@ export default function PrivacyPage() {
       <p>When you create an account, we collect your name and email address through Apple Sign-In via Supabase Authentication.</p>
 
       <h3 className="text-lg font-semibold mt-6 mb-2">Closet &amp; Style Data</h3>
-      <p>You may upload photos of your clothing items. Our AI processes these images to identify garment type, color, and style attributes. Processed item data is stored to provide outfit recommendations. Original photos may be stored temporarily for processing and are not retained beyond what is necessary.</p>
+      <p>You may upload photos of your clothing items and style. These photos are sent to Google AI for processing to identify garment type, color, style attributes, and fashion preferences. The App explicitly requests your consent before sending any photos to our AI service. Processed item data is stored in your account to provide outfit recommendations. Photos sent to Google AI are processed in real-time and are <strong>not retained by Google</strong> beyond the API request, and are <strong>not used to train AI models</strong>.</p>
 
       <h3 className="text-lg font-semibold mt-6 mb-2">Style Preferences</h3>
-      <p>During onboarding, you provide style preferences and photos so Nebulook can learn your taste. This data is used solely to personalize your outfit recommendations.</p>
+      <p>During onboarding, you provide style preferences and photos so Nebulook can learn your taste. This data is processed by Google AI and used solely to personalize your outfit recommendations.</p>
 
       <h3 className="text-lg font-semibold mt-6 mb-2">Location Data</h3>
       <p>With your permission, Nebulook accesses your approximate location to provide accurate weather-based outfit suggestions. Location data is not stored on our servers and is used only in real-time for weather lookups.</p>
 
       <h3 className="text-lg font-semibold mt-6 mb-2">Camera &amp; Photo Library</h3>
-      <p>Nebulook requests camera and photo library access to allow you to scan closet items. Photos are processed for garment detection and are not shared with third parties.</p>
+      <p>Nebulook requests camera and photo library access to allow you to scan closet items and take style photos. Photos are sent to Google AI for garment detection and style analysis. This is disclosed in-app and requires your explicit consent before any data is transmitted.</p>
 
       <h3 className="text-lg font-semibold mt-6 mb-2">Usage Data</h3>
       <p>We collect anonymized usage data including app interactions and crash logs to help us improve the App.</p>
@@ -67,9 +67,20 @@ export default function PrivacyPage() {
         <li><strong>Supabase</strong> &mdash; authentication, cloud database, storage, and serverless functions (PostgreSQL with Row Level Security).</li>
         <li><strong>RevenueCat</strong> &mdash; subscription management and purchase verification.</li>
         <li><strong>Apple</strong> &mdash; Sign-In with Apple and App Store payment processing.</li>
-        <li><strong>OpenAI</strong> &mdash; AI processing for garment detection and outfit generation (via server-side API calls; your data is not used to train their models).</li>
+        <li><strong>Google AI</strong> &mdash; AI processing for style analysis, garment detection, and outfit generation. Photos you upload are sent to Google AI via server-side API calls for real-time processing. <strong>Your photos are not stored by Google beyond the API request and are not used to train AI models.</strong> The App requests your explicit consent before sending any data to this service.</li>
       </ul>
       <p className="mt-4">Each third-party service has its own privacy policy governing their handling of your data. We encourage you to review them.</p>
+
+      <h2 className="text-2xl font-bold mt-10 mb-4">4a. AI Data Processing &amp; Consent</h2>
+      <p>Nebulook uses Google AI to process your photos for the following purposes:</p>
+      <ul className="list-disc pl-6 space-y-2 text-foreground/70">
+        <li><strong>Style analysis</strong> &mdash; detecting your fashion preferences, color palette, and aesthetic from uploaded photos.</li>
+        <li><strong>Garment detection</strong> &mdash; identifying individual clothing items in closet photos.</li>
+        <li><strong>Outfit generation</strong> &mdash; creating outfit combinations and preview images based on your wardrobe and style.</li>
+      </ul>
+      <p className="mt-4"><strong>What data is sent:</strong> Only the photos you upload and text descriptions of clothing items. No personally identifiable information (name, email, location) is sent to Google AI.</p>
+      <p className="mt-2"><strong>How consent is obtained:</strong> The App displays a clear consent prompt before any photos are sent to Google AI for the first time. You must explicitly accept this prompt to proceed. Your consent choice is stored in your account and persists across devices.</p>
+      <p className="mt-2"><strong>Data retention by Google:</strong> Photos are processed in real-time and are not retained by Google beyond the API request. Your data is not used to train or improve Google&apos;s AI models.</p>
 
       <h2 className="text-2xl font-bold mt-10 mb-4">5. Data Storage &amp; Security</h2>
       <ul className="list-disc pl-6 space-y-2 text-foreground/70">
