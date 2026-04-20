@@ -82,6 +82,17 @@ export default function PrivacyPage() {
       <p className="mt-2"><strong>How consent is obtained:</strong> The App displays a clear consent prompt before any photos are sent to Google AI for the first time. You must explicitly accept this prompt to proceed. Your consent choice is stored in your account and persists across devices.</p>
       <p className="mt-2"><strong>Data retention by Google:</strong> Photos are processed in real-time and are not retained by Google beyond the API request. Your data is not used to train or improve Google&apos;s AI models.</p>
 
+      <h2 className="text-2xl font-bold mt-10 mb-4">4b. Face Data</h2>
+      <p>During onboarding, Nebulook asks you to upload an optional selfie so the App can render outfit previews showing how garments may look on you. We treat this selfie as face data and disclose its handling explicitly below.</p>
+      <ul className="list-disc pl-6 space-y-2 text-foreground/70">
+        <li><strong>What face data we collect:</strong> A single self-uploaded photo containing your face. We do <strong>not</strong> derive, compute, or store any facial-recognition template, faceprint, biometric hash, or other biometric identifier. The App does not use Apple FaceID for authentication.</li>
+        <li><strong>How we use it:</strong> (1) as your in-app avatar, and (2) sent to Google AI (Gemini) at the moment of outfit generation so Gemini can render a preview image of you wearing the selected garments. No other use.</li>
+        <li><strong>Who it is shared with:</strong> Google AI (Gemini API). The photo is transmitted over TLS, processed in real-time, and is <strong>not retained by Google</strong> beyond the API request. Your face data is <strong>not used to train or improve Google&apos;s AI models</strong>.</li>
+        <li><strong>Where it is stored:</strong> In our Supabase Storage (<code>avatars</code> bucket), encrypted in transit and at rest, protected by Row Level Security so only you can access it.</li>
+        <li><strong>Consent:</strong> Before any face data leaves the device, the App displays an in-app disclosure that identifies Google AI by name and explains the purpose. Tapping <em>Continuar</em> on the selfie step and <em>Analizar mi estilo</em> on the style-photos step constitutes your explicit consent. You may skip uploading a selfie entirely.</li>
+        <li><strong>Retention:</strong> Your selfie is retained on our servers for as long as your account exists. You can replace or remove it at any time from your profile. Upon account deletion, your selfie and all associated data are deleted within 30 days.</li>
+      </ul>
+
       <h2 className="text-2xl font-bold mt-10 mb-4">5. Data Storage &amp; Security</h2>
       <ul className="list-disc pl-6 space-y-2 text-foreground/70">
         <li>Your data is stored securely in Supabase (PostgreSQL) with Row Level Security ensuring you can only access your own data.</li>
